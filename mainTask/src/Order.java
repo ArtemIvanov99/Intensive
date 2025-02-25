@@ -11,9 +11,10 @@ public abstract class Order {
     }
     public abstract double getBasePrice();
     public abstract double getDiscount();
+    public abstract String description();
 
     public double getFinalPrice(){
         return getBasePrice() * getDiscount();
     }
-    public abstract String description();
+
 }

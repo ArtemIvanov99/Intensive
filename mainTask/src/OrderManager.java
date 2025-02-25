@@ -1,11 +1,14 @@
 import java.util.*;
 
 public class OrderManager {
+    //хранит список доступных заказов.
     Map<String, List<Order>> OrderList = new HashMap<>();
 
+    //добавление новых заказов.
     public void addOrder(Order order) {
         OrderList.computeIfAbsent(order.user.getFirstName(), k-> new ArrayList<>()).add(order);
     }
+    //вывод заказов по конкретному user.
     public void printOrders(User user){
         double totalCost = 0;
         List<Order> currentClient = OrderList.get(user.getFirstName());
